@@ -7,10 +7,9 @@ static class Program {
         var factory = new ConnectionFactory()
         {
             HostName = "localhost",
-            //Port = 8080,
-            Port = 15672,
-            UserName = "user",
-            Password = "password",
+            //Port = 15692,
+            //UserName = "user",
+            //Password = "password",
         };
         using (var connection = factory.CreateConnection())
     
@@ -22,7 +21,7 @@ static class Program {
                 autoDelete: false,
                 arguments: null);
     
-            string message = "teste da aplicação";
+            string message = "{\r\n \"codigoPedido\": 1001,\r\n \"codigoCliente\":1,\r\n \"itens\": [\r\n {\r\n \"produto\": \"lápis\",\r\n \"quantidade\": 100,\r\n \"preco\": 1.10\r\n },\r\n {\r\n \"produto\": \"caderno\",\r\n \"quantidade\": 10,\r\n \"preco\": 1.00\r\n }\r\n ]\r\n}\r\n";
             var body = Encoding.UTF8.GetBytes(message);
     
             channel.BasicPublish(exchange: "",
@@ -32,6 +31,5 @@ static class Program {
     
             Console.WriteLine($"[x] Enviada: {message}");
         }
-        Console.ReadLine();
     }
 }

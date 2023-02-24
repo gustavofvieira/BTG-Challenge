@@ -40,6 +40,16 @@
             "related": ".xml"
           }
         }
+      },
+      "DesafioBTG.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DesafioBTG.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DesafioBTG.Domain.dll": {}
+        }
       }
     }
   },
@@ -106,10 +116,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "DesafioBTG.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DesafioBTG.Domain/DesafioBTG.Domain.csproj",
+      "msbuildProject": "../DesafioBTG.Domain/DesafioBTG.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "DesafioBTG.Domain >= 1.0.0",
       "RabbitMQ.Client >= 6.4.0"
     ]
   },
@@ -145,7 +161,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Domain\\DesafioBTG.Domain.csproj": {
+              "projectPath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Domain\\DesafioBTG.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

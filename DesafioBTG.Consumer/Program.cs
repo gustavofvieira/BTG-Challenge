@@ -1,18 +1,18 @@
-﻿using RabbitMQ.Client;
+﻿using DesafioBTG.Domain.Models;
+using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
+using System.Text.Json;
 
 static class Program
 {
+    public static int Request { get; private set; }
+
     static void Main(string[] args)
     {
         var factory = new ConnectionFactory()
         {
             HostName = "localhost",
-            //Port = 8080,
-            Port = 15672,
-            UserName = "user",
-            Password = "password",
         };
         using (var connection = factory.CreateConnection())
 
@@ -26,17 +26,19 @@ static class Program
 
             var consumer = new EventingBasicConsumer(channel);
 
+
             consumer.Received += (model, ea) =>
             {
                 var body = ea.Body.ToArray();
                 var message = Encoding.UTF8.GetString(body);
-                Console.WriteLine($" [x] Recebida : {message}");
+                var request = JsonSerializer.Deserialize<Request>(message);
+                //Console.WriteLine($" [x] Recebida : {message}");
+                Console.WriteLine($"Requests: {request.CodigoPedido} | {request.CodigoCliente} | {request.Itens}");
             };
 
             channel.BasicConsume(queue: "requests-queue", 
                 autoAck: true,
                 consumer: consumer);
         }
-        Console.ReadLine();
     }
 }
