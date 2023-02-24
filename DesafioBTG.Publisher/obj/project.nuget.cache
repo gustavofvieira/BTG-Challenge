@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "c4tr/mAcG4iJ9l3qdZvSzO3/Vtz9nITzkrBikOvTqrD118B1vdR96H5nO5DguxVX3MpFnwd+aJ6/4vfvWj0hcQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Publisher.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gusta\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+  ],
+  "logs": []
+}
