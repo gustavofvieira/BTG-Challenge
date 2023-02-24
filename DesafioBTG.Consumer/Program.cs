@@ -1,44 +1,47 @@
-﻿using DesafioBTG.Domain.Models;
+﻿using RabbitMQ.Client.Events;
 using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
+using DesafioBTG.Domain.Models;
 
-static class Program
+var factory = new ConnectionFactory { HostName = "localhost" };
+using var connection = factory.CreateConnection();
+using var channel = connection.CreateModel();
+
+channel.QueueDeclare(queue: "orders-queue",
+                     durable: false,
+                     exclusive: false,
+                     autoDelete: false,
+                     arguments: null);
+
+Console.WriteLine(" [*] Waiting for messages.");
+
+var consumer = new EventingBasicConsumer(channel);
+consumer.Received += (model, ea) =>
 {
-    public static int Request { get; private set; }
-
-    static void Main(string[] args)
+    try
     {
-        var factory = new ConnectionFactory()
-        {
-            HostName = "localhost",
-        };
-        using (var connection = factory.CreateConnection())
+        var body = ea.Body.ToArray();
+        var message = Encoding.UTF8.GetString(body);
 
-        using (var channel = connection.CreateModel())
-        {
-            channel.QueueDeclare(queue: "requests-queue",
-                durable: false,
-                exclusive: false,
-                autoDelete: false,
-                arguments: null);
+        Console.WriteLine($" [x] Received {message}");
 
-            var consumer = new EventingBasicConsumer(channel);
+        var order = JsonSerializer.Deserialize<Order>(message);
 
+        Console.WriteLine($"[x] Order Code: {order.CodigoPedido} | CodeClient {order.CodigoCliente}");
 
-            consumer.Received += (model, ea) =>
-            {
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-                var request = JsonSerializer.Deserialize<Request>(message);
-                //Console.WriteLine($" [x] Recebida : {message}");
-                Console.WriteLine($"Requests: {request.CodigoPedido} | {request.CodigoCliente} | {request.Itens}");
-            };
-
-            channel.BasicConsume(queue: "requests-queue", 
-                autoAck: true,
-                consumer: consumer);
-        }
+        channel.BasicAck(ea.DeliveryTag, false);
     }
-}
+    catch(Exception ex)
+    {
+        //Logger
+        channel.BasicNack(ea.DeliveryTag, false, true);
+    }
+    
+};
+channel.BasicConsume(queue: "orders-queue",
+                     autoAck: false,
+                     consumer: consumer);
+
+Console.WriteLine(" Press [enter] to exit.");
+Console.ReadLine();

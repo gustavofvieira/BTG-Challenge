@@ -1,15 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "GKjblLxy2ZWSo892Eh2CTEigf6Iytak5BBtlFUdFT00ibKvCkeBLQ070sXRDDvAHFPyNA6zf/shG8dJ1pHgtVg==",
+  "dgSpecHash": "3TEBUu9ksn47cyQXYO4LSLyC4h1JaKRp8PxkObIuSy2SRWfgPp+UwKzvqf+wYFkrT/FRSx8UyF2kzmSQZ5P8mQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.WebApi\\DesafioBTG.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
-    "C:\\Users\\gusta\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+    "C:\\Users\\gusta\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

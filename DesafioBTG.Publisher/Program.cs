@@ -7,15 +7,12 @@ static class Program {
         var factory = new ConnectionFactory()
         {
             HostName = "localhost",
-            //Port = 15692,
-            //UserName = "user",
-            //Password = "password",
         };
         using (var connection = factory.CreateConnection())
     
         using (var channel = connection.CreateModel())
         {
-            channel.QueueDeclare(queue: "requests-queue",
+            channel.QueueDeclare(queue: "orders-queue",
                 durable: false,
                 exclusive: false,
                 autoDelete: false,
@@ -25,7 +22,7 @@ static class Program {
             var body = Encoding.UTF8.GetBytes(message);
     
             channel.BasicPublish(exchange: "",
-                routingKey: "requests-queue",
+                routingKey: "orders-queue",
                 basicProperties: null,
                 body: body);
     

@@ -1,31 +1,33 @@
 ﻿{
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:58136",
-      "sslPort": 44387
-    }
-  },
+  "$schema": "https://json.schemastore.org/launchsettings.json"//,
+  //"iisSettings": {
+  //  "windowsAuthentication": false,
+  //  "anonymousAuthentication": true,
+  //  "iisExpress": {
+  //    "applicationUrl": "http://localhost:58136",
+  //    "sslPort": 44387
+  //  }
+  //},
   "profiles": {
     "DesafioBTG.WebApi": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
-      "launchUrl": "swagger",
+      //"launchBrowser": true,
+      "launchBrowser": false,
+      //"launchUrl": "swagger",
+      "launchUrl": "/api/order",
       "applicationUrl": "https://localhost:7265;http://localhost:5265",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "swagger",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
-    }
+    }//,
+    //"IIS Express": {
+    //  "commandName": "IISExpress",
+    //  "launchBrowser": true,
+    //  "launchUrl": "swagger",
+    //  "environmentVariables": {
+    //    "ASPNETCORE_ENVIRONMENT": "Development"
+    //  }
+    //}
   }
 }

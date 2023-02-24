@@ -1,6 +1,6 @@
 ﻿namespace DesafioBTG.Domain.Models
 {
-    public class Itens
+    public class Item
     {
         public string Produto { get; set; }
         public int Quantidade { get; set; }
