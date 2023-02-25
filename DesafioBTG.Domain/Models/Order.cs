@@ -1,13 +1,20 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace DesafioBTG.Domain.Models
 {
     public class Order
     {
         [BsonId]
-        public Guid Id { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
+        [BsonElement("codigoPedido")]
         public int CodigoPedido { get; set; }
+
+        [BsonElement("codigoCliente")]
         public int CodigoCliente { get; set; }
+
+        [BsonElement("itens")]
         public List<Item> Itens { get; set; }
 
     }

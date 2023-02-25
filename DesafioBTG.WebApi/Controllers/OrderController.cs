@@ -1,11 +1,14 @@
-﻿using DesafioBTG.Domain.Models;
+﻿using DesafioBTG.Domain.Interfaces.Services;
+using DesafioBTG.Domain.Models;
 using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using System;
 using System.Text;
 using System.Text.Json;
+using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,13 +19,16 @@ namespace DesafioBTG.WebApi.Controllers
     public class OrderController : ControllerBase
     {
         private ILogger<OrderController> _logger;
+        private readonly IOrderService _orderService;
 
-        public OrderController(ILogger<OrderController> logger)
+        public OrderController(ILogger<OrderController> logger, IOrderService orderService)
         {
             _logger = logger;
+            _orderService = orderService;
         }
 
-        //[HttpGet]
+        [HttpPost]
+        [Route("insert")]
         public IActionResult InsertOrder(Order order)
         {
             try
@@ -45,10 +51,7 @@ namespace DesafioBTG.WebApi.Controllers
                                          routingKey: "orders-queue",
                                          basicProperties: null,
                                          body: body);
-                    //Console.WriteLine($" [x] Sent {message}");
-
-                    //Console.WriteLine(" Press [enter] to exit.");
-                    //Console.ReadLine();
+          
                 }
                 return Accepted(order);
             }
@@ -58,37 +61,32 @@ namespace DesafioBTG.WebApi.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("totalOrder")]
+        public async Task<IActionResult> totalByCodeOrder(int codeOrder) //a: valor total do pedido
+        {
+            var totalOrder = await _orderService.GetTotalByCodeOrder(codeOrder);
+            return Ok(totalOrder);
+        }
 
-        // GET: api/<ValuesController>
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
+        [HttpGet]
+        [Route("countOrders")]
+        public async Task<IActionResult> countOrdersByClient(int codeClient) //b: Quantidade de Pedidos por Cliente
 
-        //// GET api/<ValuesController>/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
+        {
+            var countTotalOrders = await _orderService.GetTotalOrdersByCodeClient(codeClient);
+            return Ok(countTotalOrders);
+        }
 
-        //// POST api/<ValuesController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
+        [HttpGet]
+        [Route("ordersByClient")]
+        public async Task<IActionResult> OrdersByClientList(int codeClient) //c: Lista de pedidos realizados por cliente
+        {
+            
+            var totalOrders = await _orderService.OrdersByClientList(codeClient);
+            return Ok(totalOrders);
+        }
 
-        //// PUT api/<ValuesController>/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
 
-        //// DELETE api/<ValuesController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

@@ -15,8 +15,6 @@ class Program {
        var jobExecutor = new JobExecutor();
         jobExecutor.Executor().Wait();
         app.Run();
-
-        //app.Run();
     }
 
     private static IHostBuilder CreateHostBuilder() =>

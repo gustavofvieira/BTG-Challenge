@@ -13,10 +13,16 @@ namespace DesafioBTG.Services.Services
             _orderRepository = orderRepository;
         }
 
-        public async Task<Order> GetByIdAsync(Guid id) =>
+        public async Task<Order> GetByIdAsync(string id) =>
             await _orderRepository.GetByIdAsync(id);
 
         public async Task<List<Order>> GetAllOrdersPublisher() =>
             await _orderRepository.GetAllOrdersPublisher();
+        public async Task<int> GetTotalOrdersByCodeClient(int codeClient) => await _orderRepository.GetTotalOrdersByCodeClient(codeClient);
+        public async Task<List<Order>> OrdersByClientList(int codeClient) => await _orderRepository.OrdersByClientList(codeClient);
+        public async Task<double> GetTotalByCodeOrder(int codeOrder) => await _orderRepository.GetTotalByCodeOrder(codeOrder);
+
+
+
     }
 }

@@ -1,9 +1,16 @@
-﻿namespace DesafioBTG.Domain.Models
+﻿using MongoDB.Bson.Serialization.Attributes;
+
+namespace DesafioBTG.Domain.Models
 {
     public class Item
     {
-        public string Produto { get; set; }
-        public int Quantidade { get; set; }
-        public double Preco { get; set; }
+        [BsonElement("produto")]
+        public string Product { get; set; }
+
+        [BsonElement("quantidade")]
+        public int Amout { get; set; }
+
+        [BsonElement("preco")]
+        public double Price { get; set; }
     }
 }

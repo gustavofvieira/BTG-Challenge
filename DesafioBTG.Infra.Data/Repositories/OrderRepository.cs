@@ -16,13 +16,29 @@ namespace DesafioBTG.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<Order> GetByIdAsync(Guid id) =>
+        public async Task<Order> GetByIdAsync(string id) =>
             await _context.Orders
                 .AsQueryable()
-                .SingleAsync(b => b.Id == id);
+                .SingleAsync(b => b._id == id);
         public async Task<List<Order>> GetAllOrdersPublisher() => 
             await _context.OrdersProducer
             .AsQueryable()
             .ToListAsync();
+        public async Task<int> GetTotalOrdersByCodeClient(int codeClient) =>
+            await _context.OrdersProducer.AsQueryable().CountAsync(o => o.CodigoCliente.Equals(codeClient));
+        public async Task<List<Order>> OrdersByClientList(int codeClient) =>
+            await _context.OrdersProducer.AsQueryable().Where(o => o.CodigoCliente.Equals(codeClient)).ToListAsync();
+
+        public async Task<double> GetTotalByCodeOrder(int codeOrder)
+        {
+            var order = await _context.OrdersProducer.AsQueryable().Where(o => o.CodigoPedido.Equals(codeOrder)).FirstOrDefaultAsync();
+
+            double totalOrder = 0;
+            foreach (var item in order.Itens)
+            {
+                totalOrder += item.Price;
+            }
+            return totalOrder;
+        }
     }
 }
