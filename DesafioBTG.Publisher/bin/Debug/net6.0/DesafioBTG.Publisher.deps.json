@@ -8,10 +8,22 @@
     ".NETCoreApp,Version=v6.0": {
       "DesafioBTG.Publisher/1.0.0": {
         "dependencies": {
+          "DesafioBTG.Domain": "1.0.0",
           "RabbitMQ.Client": "6.4.0"
         },
         "runtime": {
           "DesafioBTG.Publisher.dll": {}
+        }
+      },
+      "MongoDB.Bson/2.19.0": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/MongoDB.Bson.dll": {
+            "assemblyVersion": "2.19.0.0",
+            "fileVersion": "2.19.0.0"
+          }
         }
       },
       "RabbitMQ.Client/6.4.0": {
@@ -27,7 +39,16 @@
         }
       },
       "System.Memory/4.5.4": {},
-      "System.Threading.Channels/4.7.1": {}
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
+      "System.Threading.Channels/4.7.1": {},
+      "DesafioBTG.Domain/1.0.0": {
+        "dependencies": {
+          "MongoDB.Bson": "2.19.0"
+        },
+        "runtime": {
+          "DesafioBTG.Domain.dll": {}
+        }
+      }
     }
   },
   "libraries": {
@@ -35,6 +56,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "MongoDB.Bson/2.19.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pGp9F2PWU3Dj54PiXKibuaQ5rphWkfp8/Nsy5jLp2dWZGRGlr3r/Lfwnr0PvfihFfxieUcJZ2z3VeO8RctXcvA==",
+      "path": "mongodb.bson/2.19.0",
+      "hashPath": "mongodb.bson.2.19.0.nupkg.sha512"
     },
     "RabbitMQ.Client/6.4.0": {
       "type": "package",
@@ -50,12 +78,24 @@
       "path": "system.memory/4.5.4",
       "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+    },
     "System.Threading.Channels/4.7.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-6akRtHK/wab3246t4p5v3HQrtQk8LboOt5T4dtpNgsp3zvDeM4/Gx8V12t0h+c/W9/enUrilk8n6EQqdQorZAA==",
       "path": "system.threading.channels/4.7.1",
       "hashPath": "system.threading.channels.4.7.1.nupkg.sha512"
+    },
+    "DesafioBTG.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

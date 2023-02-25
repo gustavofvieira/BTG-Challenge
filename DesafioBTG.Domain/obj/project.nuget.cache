@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "SsrVKXv5YRwyEpHj+cxfZiGj4Lb14ATW9ASb0YN8QMzAIebpOMhKP87jaROoPaIbK3wGQ56KnxU3NVleEt0Zyw==",
+  "dgSpecHash": "DKl4zP2wu0JJ8nHNpEApn3qG4K9r2hOhiAYXRGxLlYIyrG+43LPUVoFchN98y5CyzKcR8E9T6jbZHKMhN9A18w==",
   "success": true,
   "projectFilePath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Domain\\DesafioBTG.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\gusta\\.nuget\\packages\\mongodb.bson\\2.19.0\\mongodb.bson.2.19.0.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

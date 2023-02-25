@@ -1,3 +1,5 @@
+using DesafioBTG.Setup;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -21,5 +23,33 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+
+/*add sturtup*/
+//IHostBuilder CreateHostBuilder(string[] args)
+//{
+//    return Host.CreateDefaultBuilder(args)
+//        .ConfigureWebHostDefaults(webBuilder =>
+//        {
+//            webBuilder.ConfigureKestrel(options =>
+//            {
+//                options.AllowSynchronousIO = true;
+//            })
+//           .UseStartup<Startup>();
+//        });
+//}
+//CreateHostBuilder(args).Build().Run();
+
+Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.ConfigureKestrel(options =>
+            {
+                options.AllowSynchronousIO = true;
+            })
+           .UseStartup<Startup>();
+        });
+/*add sturtup*/
+
 
 app.Run();

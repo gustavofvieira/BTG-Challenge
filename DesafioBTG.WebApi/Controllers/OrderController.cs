@@ -1,5 +1,4 @@
 ﻿using DesafioBTG.Domain.Models;
-using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
 using RabbitMQ.Client;
 using System.Text;

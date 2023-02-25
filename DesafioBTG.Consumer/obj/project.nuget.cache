@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "n24/e/MHRP+KAGyAjkiuxth9z11JezEbrmIHUUIvWA41rIMwxbxJLiqtnVoSsTxC6SH8oROVuY/zrVgild541A==",
+  "dgSpecHash": "OSFhXnRikJQ14Nshib7sbWx0v/eOILJaRnU9oImfqcIgSm3GCZNtG0utMXCZzFzaW/8rD6dEL/q6By//3Gqenw==",
   "success": true,
   "projectFilePath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Consumer\\DesafioBTG.Consumer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\gusta\\.nuget\\packages\\mongodb.bson\\2.19.0\\mongodb.bson.2.19.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\gusta\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
