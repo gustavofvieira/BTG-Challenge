@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DesafioBTG.Domain\DesafioBTG.Domain.csproj" />
-    <ProjectReference Include="..\DesafioBTG.Setup\DesafioBTG.Setup.csproj" />
   </ItemGroup>
 
 </Project>

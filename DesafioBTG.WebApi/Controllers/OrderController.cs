@@ -1,6 +1,9 @@
 ﻿using DesafioBTG.Domain.Models;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
+using System;
 using System.Text;
 using System.Text.Json;
 
@@ -26,25 +29,26 @@ namespace DesafioBTG.WebApi.Controllers
             {
                 var factory = new ConnectionFactory { HostName = "localhost" };
                 using (var connection = factory.CreateConnection())
-                using (var channel = connection.CreateModel()) { 
+                using (var channel = connection.CreateModel())
+                {
 
-                channel.QueueDeclare(queue: "orders-queue",
-                                     durable: false,
-                                     exclusive: false,
-                                     autoDelete: false,
-                                     arguments: null);
+                    channel.QueueDeclare(queue: "orders-queue",
+                                         durable: false,
+                                         exclusive: false,
+                                         autoDelete: false,
+                                         arguments: null);
 
-                string message = JsonSerializer.Serialize(order);
-                var body = Encoding.UTF8.GetBytes(message);
+                    string message = JsonSerializer.Serialize(order);
+                    var body = Encoding.UTF8.GetBytes(message);
 
-                channel.BasicPublish(exchange: string.Empty,
-                                     routingKey: "orders-queue",
-                                     basicProperties: null,
-                                     body: body);
-                //Console.WriteLine($" [x] Sent {message}");
+                    channel.BasicPublish(exchange: string.Empty,
+                                         routingKey: "orders-queue",
+                                         basicProperties: null,
+                                         body: body);
+                    //Console.WriteLine($" [x] Sent {message}");
 
-                //Console.WriteLine(" Press [enter] to exit.");
-                //Console.ReadLine();
+                    //Console.WriteLine(" Press [enter] to exit.");
+                    //Console.ReadLine();
                 }
                 return Accepted(order);
             }

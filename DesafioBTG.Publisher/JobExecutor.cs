@@ -9,7 +9,6 @@ namespace DesafioBTG.Publisher
     {
         public readonly IOrderService _orderService;
 
-
         public JobExecutor()
         {
         }
@@ -50,7 +49,6 @@ namespace DesafioBTG.Publisher
                     Console.WriteLine($"[x] Enviada: {message}");
 
                 }
-
             }
         }
     }
