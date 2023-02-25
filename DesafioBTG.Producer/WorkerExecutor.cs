@@ -48,6 +48,7 @@ namespace DesafioBTG.Worker.Producer
                         body: body);
 
                     _logger.LogInformation("[x] Enviada: {message}", message);
+                    Console.ReadLine();
 
                 }
             }

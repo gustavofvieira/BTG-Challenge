@@ -14,7 +14,9 @@ namespace DesafioBTG.Worker.Consumer
         public readonly ILogger<WorkerExecutor> _logger;
         public readonly IOrderService _orderService;
 
-        public WorkerExecutor(ILogger<WorkerExecutor> logger, IOrderService orderService)
+        public WorkerExecutor(
+            ILogger<WorkerExecutor> logger,
+            IOrderService orderService)
         {
             _logger = logger;
             _orderService = orderService;
@@ -32,9 +34,10 @@ namespace DesafioBTG.Worker.Consumer
                                  autoDelete: false,
                                  arguments: null);
 
-            Console.WriteLine(" [*] Waiting for messages.");
+            _logger.LogInformation(" [*] Waiting for messages.");
 
             var consumer = new EventingBasicConsumer(channel);
+            
             consumer.Received += async (model, ea) =>
             {
                 try
@@ -43,18 +46,18 @@ namespace DesafioBTG.Worker.Consumer
                     var message = Encoding.UTF8.GetString(body);
 
                     _logger.LogInformation(" [x] Received: {message}", message);
+                  
+                    var order = JsonSerializer.Deserialize<Order>(message);
 
-                    Order order = JsonSerializer.Deserialize<Order>(message)!;
-
-                    _logger.LogInformation("[x] Order Code: {CodeOrder} | CodeClient {CodeClient}", order?.CodeOrder, order?.CodeClient);
+                    _logger.LogInformation("[x] Order Code: {CodeOrder} | CodeClient {CodeClient}", order.CodeOrder, order.CodeClient);
 
                     channel.BasicAck(ea.DeliveryTag, false);
 
-                   await _orderService.AddOrder(order!);
+                    await _orderService.AddOrder(order);
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError("Exception: ",ex.Message);
+                    _logger.LogError("Exception: ", ex.Message);
                     channel.BasicNack(ea.DeliveryTag, false, true);
                 }
 
@@ -62,6 +65,9 @@ namespace DesafioBTG.Worker.Consumer
             channel.BasicConsume(queue: "orders-queue",
                                  autoAck: false,
                                  consumer: consumer);
+
+                _logger.LogInformation("Finish Worker");
+                Console.ReadLine();
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
