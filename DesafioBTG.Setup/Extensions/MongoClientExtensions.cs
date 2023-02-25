@@ -13,8 +13,7 @@ namespace DesafioBTG.Setup.Extensions
         => services.AddSingleton(_ =>
         {
             var settings = MongoClientSettings.FromUrl(
-                //new MongoUrl(configuration.GetConnectionString("DatabaseServer"))
-                new MongoUrl("mongodb://localhost")
+                new MongoUrl(configuration.GetConnectionString("DatabaseServer"))
             );
 
             var env = Environment.GetEnvironmentVariable("DOTNET_ENVIRONMENT")

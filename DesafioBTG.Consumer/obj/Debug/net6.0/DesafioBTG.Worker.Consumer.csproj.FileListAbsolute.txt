@@ -65,3 +65,4 @@ C:\Users\gusta\Documents\Provas - Candidaturas\BTG Pactual\DesafioBTG\DesafioBTG
 C:\Users\gusta\Documents\Provas - Candidaturas\BTG Pactual\DesafioBTG\DesafioBTG.Consumer\obj\Debug\net6.0\DesafioBTG.Worker.Consumer.pdb
 C:\Users\gusta\Documents\Provas - Candidaturas\BTG Pactual\DesafioBTG\DesafioBTG.Consumer\obj\Debug\net6.0\DesafioBTG.Worker.Consumer.genruntimeconfig.cache
 C:\Users\gusta\Documents\Provas - Candidaturas\BTG Pactual\DesafioBTG\DesafioBTG.Consumer\obj\Debug\net6.0\ref\DesafioBTG.Worker.Consumer.dll
+C:\Users\gusta\Documents\Provas - Candidaturas\BTG Pactual\DesafioBTG\DesafioBTG.Consumer\bin\Debug\net6.0\appsettings.json

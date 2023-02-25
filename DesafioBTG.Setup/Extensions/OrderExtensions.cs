@@ -12,8 +12,7 @@ namespace DesafioBTG.Setup.Extensions
             return services
                  .AddScoped(sp =>
                     new OrderContext(
-                        //sp.GetRequiredService<MongoClient>().GetDatabase(config.GetConnectionString("DesafioBTGDatabase"))
-                        sp.GetRequiredService<MongoClient>().GetDatabase("DesafioBTG")
+                        sp.GetRequiredService<MongoClient>().GetDatabase(config.GetConnectionString("DesafioBTGDatabase"))
                     )
                 );
         }
