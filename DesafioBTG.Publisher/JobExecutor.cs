@@ -7,7 +7,7 @@ namespace DesafioBTG.Publisher
 {
     public class JobExecutor
     {
-        public readonly IOrderService _orderService;
+        public IOrderService _orderService;
 
         public JobExecutor()
         {

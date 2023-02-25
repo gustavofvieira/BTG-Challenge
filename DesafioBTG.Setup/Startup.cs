@@ -14,15 +14,19 @@ namespace DesafioBTG.Setup
 
         public IConfiguration Configuration { get; }
 
+        public void Configure()
+        {
+         
+        }
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IOrderService, OrderService>();
             services.AddScoped<IOrderRepository, OrderRepository>();
             services
                 .AddMongoClientConfiguration(Configuration)
-                .AddPaymentContext(Configuration);
+                .AddOrderContext(Configuration);
 
-           
+
         }
     }
 }

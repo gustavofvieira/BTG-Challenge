@@ -1,44 +1,30 @@
 ﻿using DesafioBTG.Publisher;
+using DesafioBTG.Setup;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
 
-static class Program {
+class Program {
 
+   
     static void Main(string[] args)
     {
-        var executor = new JobExecutor();
+        var builder = CreateHostBuilder();
+                
+        var app = builder.Build();
 
-        executor.Executor();
+       var jobExecutor = new JobExecutor();
+        jobExecutor.Executor().Wait();
+        app.Run();
 
-        //var factory = new ConnectionFactory()
-        //{
-        //    HostName = "localhost",
-        //};
-        //using (var connection = factory.CreateConnection())
-
-        //using (var channel = connection.CreateModel())
-        //{
-        //    channel.QueueDeclare(queue: "orders-queue",
-        //        durable: false,
-        //        exclusive: false,
-        //        autoDelete: false,
-        //        arguments: null);
-
-        //    var ordersPublish = await _orderService.GetAllOrdersPublisher();
-
-        //   foreach(var order in ordersPublish)
-        //   {
-        //        string message = JsonSerializer.Serialize(order);
-
-        //        var body = Encoding.UTF8.GetBytes(message);
-
-        //        channel.BasicPublish(exchange: "",
-        //            routingKey: "orders-queue",
-        //            basicProperties: null,
-        //            body: body);
-
-        //        Console.WriteLine($"[x] Enviada: {message}");
-
-        //    }
-
-        //}
+        //app.Run();
     }
+
+    private static IHostBuilder CreateHostBuilder() =>
+            Host.CreateDefaultBuilder()
+                .ConfigureServices((hostContext, services) =>
+                {
+                    var startup = new Startup(hostContext.Configuration);
+
+                    startup.ConfigureServices(services);
+                });
 }

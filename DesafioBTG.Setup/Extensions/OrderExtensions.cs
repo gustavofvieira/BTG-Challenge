@@ -7,7 +7,7 @@ namespace DesafioBTG.Setup.Extensions
 {
     public static class OrderExtensions
     {
-        public static IServiceCollection AddPaymentContext(this IServiceCollection services, IConfiguration config)
+        public static IServiceCollection AddOrderContext(this IServiceCollection services, IConfiguration config)
         {
             return services
                  .AddScoped(sp =>
