@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lgkAdkv2GJ3GtXoQ7qwW8EVKtIxI3HxyxEuR4htADQ2InlPVlD73v6xNL7pxL8zvzaAHtn/um5eq4ESItxMOhw==",
+  "dgSpecHash": "mcLkrOM3QpFnlrBmI5mRcDiUySLaDgFvqFBTQtxQJ5b3vsfrO/JQBvORfp69tT4KAGDEO8pRE7yiOjk3dhqVlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Worker.Publisher.csproj",
+  "projectFilePath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Worker.Producer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusta\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",

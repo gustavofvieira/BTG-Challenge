@@ -17,30 +17,14 @@ namespace DesafioBTG.Infra.Data.Repositories
         }
 
         public async Task AddOrder(Order order) => await _context.Orders.InsertOneAsync(order);
-
-        public async Task<Order> GetByIdAsync(string id) =>
-            await _context.Orders
-                .AsQueryable()
-                .SingleAsync(b => b._id == id);
-        public async Task<List<Order>> GetAllOrdersPublisher() => 
-            await _context.Orders
-            .AsQueryable()
-            .ToListAsync();
         public async Task<int> GetTotalOrdersByCodeClient(int codeClient) =>
             await _context.Orders.AsQueryable().CountAsync(o => o.CodeClient.Equals(codeClient));
         public async Task<List<Order>> OrdersByClientList(int codeClient) =>
             await _context.Orders.AsQueryable().Where(o => o.CodeClient.Equals(codeClient)).ToListAsync();
 
-        public async Task<double> GetTotalByCodeOrder(int codeOrder)
-        {
-            var order = await _context.Orders.AsQueryable().Where(o => o.CodeOrder.Equals(codeOrder)).FirstOrDefaultAsync();
+        public async Task<Order> GetTotalByCodeOrder(int codeOrder) => 
+            await _context.Orders.AsQueryable().Where(o => o.CodeOrder.Equals(codeOrder)).FirstOrDefaultAsync();
 
-            double totalOrder = 0;
-            foreach (var item in order.Itens)
-            {
-                totalOrder += item.Price;
-            }
-            return totalOrder;
-        }
+
     }
 }

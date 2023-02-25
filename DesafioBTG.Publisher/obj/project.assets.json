@@ -3060,9 +3060,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Worker.Publisher.csproj",
-      "projectName": "DesafioBTG.Worker.Publisher",
-      "projectPath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Worker.Publisher.csproj",
+      "projectUniqueName": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Worker.Producer.csproj",
+      "projectName": "DesafioBTG.Worker.Producer",
+      "projectPath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\DesafioBTG.Worker.Producer.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\gusta\\Documents\\Provas - Candidaturas\\BTG Pactual\\DesafioBTG\\DesafioBTG.Publisher\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,4 +1,4 @@
-﻿using DesafioBTG.Worker.Publisher;
+﻿using DesafioBTG.Worker.Producer;
 using DesafioBTG.Setup;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

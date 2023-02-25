@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Domain", "Desafi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Worker.Consumer", "DesafioBTG.Consumer\DesafioBTG.Worker.Consumer.csproj", "{0EE7E4C0-9FC6-409D-A05F-A21DA66845A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Worker.Publisher", "DesafioBTG.Publisher\DesafioBTG.Worker.Publisher.csproj", "{F0EBB079-5A92-4F70-BF53-0E999199698E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Worker.Producer", "DesafioBTG.Publisher\DesafioBTG.Worker.Producer.csproj", "{F0EBB079-5A92-4F70-BF53-0E999199698E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Infra.Data", "DesafioBTG.Infra.Data\DesafioBTG.Infra.Data.csproj", "{22F1C801-7F14-439A-83B6-AB00B5AA22C4}"
 EndProject

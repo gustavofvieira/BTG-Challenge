@@ -1,17 +1,20 @@
 ﻿using DesafioBTG.Domain.Interfaces.Services;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace DesafioBTG.Worker.Publisher
+namespace DesafioBTG.Worker.Producer
 {
     public class WorkerExecutor : IHostedService
     {
+        public readonly ILogger<WorkerExecutor> _logger;
         public IOrderService _orderService;
 
-        public WorkerExecutor(IOrderService orderService)
+        public WorkerExecutor(ILogger<WorkerExecutor> logger, IOrderService orderService)
         {
+            _logger = logger;
             _orderService = orderService;
         }
 
@@ -31,7 +34,7 @@ namespace DesafioBTG.Worker.Publisher
                     autoDelete: false,
                     arguments: null);
 
-                var ordersPublish = await _orderService.GetAllOrdersPublisher();
+                var ordersPublish = _orderService.GetAllOrdersPublisher();
 
                 foreach (var order in ordersPublish)
                 {
@@ -44,7 +47,7 @@ namespace DesafioBTG.Worker.Publisher
                         basicProperties: null,
                         body: body);
 
-                    Console.WriteLine($"[x] Enviada: {message}");
+                    _logger.LogInformation("[x] Enviada: {message}", message);
 
                 }
             }
@@ -52,7 +55,8 @@ namespace DesafioBTG.Worker.Publisher
 
         public Task StopAsync(CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            _logger.LogCritical("Service stopped");
+            return Task.CompletedTask;
         }
     }
 }
