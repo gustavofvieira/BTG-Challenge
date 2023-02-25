@@ -1,8 +1,6 @@
 ﻿using DesafioBTG.Domain.Interfaces.Services;
 using DesafioBTG.Domain.Models;
-using Microsoft.AspNetCore.Connections;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
 using System;
