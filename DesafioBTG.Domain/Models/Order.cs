@@ -9,7 +9,7 @@ namespace DesafioBTG.Domain.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonIgnore]
-        public string _id { get; set; }
+        public string _id { get; set; } = default!;
 
         [BsonElement("codigoPedido")]
         [JsonPropertyName("codigoPedido")]
@@ -21,7 +21,7 @@ namespace DesafioBTG.Domain.Models
 
         [BsonElement("itens")]
         [JsonPropertyName("itens")]
-        public List<Item> Itens { get; set; }
+        public List<Item> Itens { get; set; } = default!;
 
     }
 }

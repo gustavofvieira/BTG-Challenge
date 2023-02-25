@@ -7,7 +7,7 @@ namespace DesafioBTG.Domain.Models
     {
         [BsonElement("produto")]
         [JsonPropertyName("produto")]
-        public string Product { get; set; }
+        public string Product { get; set; } = default!;
 
         [BsonElement("quantidade")]
         [JsonPropertyName("quantidade")]

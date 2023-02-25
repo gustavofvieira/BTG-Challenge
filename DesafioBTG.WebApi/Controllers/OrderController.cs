@@ -1,12 +1,9 @@
 ﻿using DesafioBTG.Domain.Interfaces.Services;
 using DesafioBTG.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using RabbitMQ.Client;
-using System;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
