@@ -13,6 +13,8 @@ namespace DesafioBTG.Services.Services
             _orderRepository = orderRepository;
         }
 
+
+        public async Task AddOrder(Order order) => await _orderRepository.AddOrder(order);
         public async Task<Order> GetByIdAsync(string id) =>
             await _orderRepository.GetByIdAsync(id);
 

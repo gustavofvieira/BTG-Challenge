@@ -14,10 +14,10 @@ namespace DesafioBTG.Setup
 
         public IConfiguration Configuration { get; }
 
-        public void Configure()
-        {
+        //public void Configure()
+        //{
          
-        }
+        //}
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IOrderService, OrderService>();

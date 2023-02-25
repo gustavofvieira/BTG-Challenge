@@ -1,28 +1,15 @@
-﻿using DesafioBTG.Publisher;
+﻿using DesafioBTG.Worker.Publisher;
 using DesafioBTG.Setup;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-class Program {
-
-   
-    static void Main(string[] args)
+IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices((hostContext, services) =>
     {
-        var builder = CreateHostBuilder();
-                
-        var app = builder.Build();
+        var startup = new Startup(hostContext.Configuration);
+        startup.ConfigureServices(services);
+        services.AddHostedService<WorkerExecutor>();
+    })
+    .Build();
 
-       var jobExecutor = new JobExecutor();
-        jobExecutor.Executor().Wait();
-        app.Run();
-    }
-
-    private static IHostBuilder CreateHostBuilder() =>
-            Host.CreateDefaultBuilder()
-                .ConfigureServices((hostContext, services) =>
-                {
-                    var startup = new Startup(hostContext.Configuration);
-
-                    startup.ConfigureServices(services);
-                });
-}
+host.Run();

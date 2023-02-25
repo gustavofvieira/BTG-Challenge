@@ -17,9 +17,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1 - Data", "5.1 - Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Domain", "DesafioBTG.Domain\DesafioBTG.Domain.csproj", "{DDB08A40-B069-4DD2-B2EE-7BBB87F34DB5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Consumer", "DesafioBTG.Consumer\DesafioBTG.Consumer.csproj", "{0EE7E4C0-9FC6-409D-A05F-A21DA66845A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Worker.Consumer", "DesafioBTG.Consumer\DesafioBTG.Worker.Consumer.csproj", "{0EE7E4C0-9FC6-409D-A05F-A21DA66845A5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Publisher", "DesafioBTG.Publisher\DesafioBTG.Publisher.csproj", "{F0EBB079-5A92-4F70-BF53-0E999199698E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Worker.Publisher", "DesafioBTG.Publisher\DesafioBTG.Worker.Publisher.csproj", "{F0EBB079-5A92-4F70-BF53-0E999199698E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Infra.Data", "DesafioBTG.Infra.Data\DesafioBTG.Infra.Data.csproj", "{22F1C801-7F14-439A-83B6-AB00B5AA22C4}"
 EndProject
@@ -29,7 +29,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Setup", "Desafio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.Services", "DesafioBTG.Services\DesafioBTG.Services.csproj", "{50EAAED8-B511-4B75-BDFB-0B6BDBA5A061}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioBTG.WebApi", "DesafioBTG.WebApi\DesafioBTG.WebApi.csproj", "{0019EFE3-ADAC-495B-8E02-B4CEDAB494C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesafioBTG.WebApi", "DesafioBTG.WebApi\DesafioBTG.WebApi.csproj", "{0019EFE3-ADAC-495B-8E02-B4CEDAB494C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
