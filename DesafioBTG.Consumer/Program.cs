@@ -28,7 +28,7 @@ consumer.Received += (model, ea) =>
 
         var order = JsonSerializer.Deserialize<Order>(message);
 
-        Console.WriteLine($"[x] Order Code: {order.CodigoPedido} | CodeClient {order.CodigoCliente}");
+        Console.WriteLine($"[x] Order Code: {order.CodeOrder} | CodeClient {order.CodeClient}");
 
         channel.BasicAck(ea.DeliveryTag, false);
     }

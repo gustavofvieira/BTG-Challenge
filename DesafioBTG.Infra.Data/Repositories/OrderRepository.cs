@@ -25,13 +25,13 @@ namespace DesafioBTG.Infra.Data.Repositories
             .AsQueryable()
             .ToListAsync();
         public async Task<int> GetTotalOrdersByCodeClient(int codeClient) =>
-            await _context.OrdersProducer.AsQueryable().CountAsync(o => o.CodigoCliente.Equals(codeClient));
+            await _context.OrdersProducer.AsQueryable().CountAsync(o => o.CodeClient.Equals(codeClient));
         public async Task<List<Order>> OrdersByClientList(int codeClient) =>
-            await _context.OrdersProducer.AsQueryable().Where(o => o.CodigoCliente.Equals(codeClient)).ToListAsync();
+            await _context.OrdersProducer.AsQueryable().Where(o => o.CodeClient.Equals(codeClient)).ToListAsync();
 
         public async Task<double> GetTotalByCodeOrder(int codeOrder)
         {
-            var order = await _context.OrdersProducer.AsQueryable().Where(o => o.CodigoPedido.Equals(codeOrder)).FirstOrDefaultAsync();
+            var order = await _context.OrdersProducer.AsQueryable().Where(o => o.CodeOrder.Equals(codeOrder)).FirstOrDefaultAsync();
 
             double totalOrder = 0;
             foreach (var item in order.Itens)

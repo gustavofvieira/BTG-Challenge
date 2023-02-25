@@ -9,10 +9,10 @@ namespace DesafioBTG.Domain.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string _id { get; set; }
         [BsonElement("codigoPedido")]
-        public int CodigoPedido { get; set; }
+        public int CodeOrder { get; set; }
 
         [BsonElement("codigoCliente")]
-        public int CodigoCliente { get; set; }
+        public int CodeClient { get; set; }
 
         [BsonElement("itens")]
         public List<Item> Itens { get; set; }
